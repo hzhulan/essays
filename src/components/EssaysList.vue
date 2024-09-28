@@ -20,6 +20,7 @@ export default {
   setup() {
     let items = ref([]);
 
+    // 异步请求，使用onMounted加载，会在组件挂载完成后执行
     onMounted(async () => {
       const response = await fetch(`${config.basePath}/essays/essayList`);
       const data = await response.json();
