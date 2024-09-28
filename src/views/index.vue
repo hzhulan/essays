@@ -1,37 +1,16 @@
-<script setup>
+<script>
+import EssaysList from "@/components/EssaysList.vue";
 
-import {ref} from 'vue'
-
-let count = ref(0);
-
-function increase() {
-  count.value++;
+export default {
+  name: 'index',
+  components: {EssaysList},
+  setup() {
+    return {
+      title: '随笔',
+      id: "title"
+    }
+  }
 }
-
-const title = "随笔"
-const id = "title"
-
-const tableData = [
-  {
-    name: '2016-05-03',
-    url: 'https://www.baidu.com',
-    desc: 'No. 189, Grove St, Los Angeles',
-  }, {
-    name: '2016-05-04',
-    url: 'https://www.baidu.com',
-    desc: 'No. 189, Grove St, Los Angeles',
-  }, {
-    name: '2016-05-05',
-    url: 'https://www.baidu.com',
-    desc: 'No. 189, Grove St, Los Angeles',
-  }, {
-    name: '2016-05-06',
-    url: 'https://www.baidu.com',
-    desc: 'No. 189, Grove St, Los Angeles',
-  },
-
-
-]
 
 
 </script>
@@ -42,16 +21,7 @@ const tableData = [
     <span :id>{{ title }}</span>
   </div>
   <div class="note-list">
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column label="随笔名称" width="200">
-        <template #default="props">
-          <div style="display: flex; align-items: center">
-            <a :href="props.row.url" target="_blank">{{ props.row.name}}</a>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column prop="desc" label="简述"/>
-    </el-table>
+    <EssaysList></EssaysList>
   </div>
 </template>
 
