@@ -2,16 +2,20 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 
 const routes = [
     {
-        path: "/", // http://localhost:5173
+        path: "/",
         component: () => import("../views/index.vue")
     },
     {
-        path: "/content", // http://localhost:5173/content
+        path: "/content",
         component: () => import("../views/content.vue")
     },
     {
-        path: "/about", // http://localhost:5173/content
+        path: "/about",
         component: () => import("../components/About.vue")
+    },
+    {
+        path: "/click",
+        component: () => import("../views/click.vue")
     },
 ]
 
