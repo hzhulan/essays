@@ -11,6 +11,7 @@
 
 <style scoped>
   .title {
+    box-sizing: border-box;
     padding: 20px 20px;
     display: flex;
     flex-direction: row;
