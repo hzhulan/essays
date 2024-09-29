@@ -24,7 +24,6 @@ const handleChange = (value) => {
     </div>
     <div class="note-list" style="flex: 1">
       <el-input v-model="input" @keydown="handleChange" placeholder="输入API名称"></el-input>
-      <el-input v-model="input" @change="handleChange" placeholder="输入API名称"></el-input>
       <EssaysList :keyword="keyword"></EssaysList>
     </div>
     <div class="note-list" style="flex: 1">
