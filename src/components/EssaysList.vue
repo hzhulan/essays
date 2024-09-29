@@ -1,5 +1,5 @@
 <template>
-  <div class="top-info">API</div>
+  <div class="top-info">API-{{keyword}}</div>
   <div v-for="(item,index) in items">
       <div style="display: flex; align-items: center; margin-top: 10px">
         {{ index + 1}}. <a :href="item.url" target="_blank">{{ item.name }}</a>
@@ -13,7 +13,10 @@ import config from "@/assets/js/config.js";
 
 export default {
   name: 'EssaysList',
-  setup() {
+  props: {
+    keyword: String
+  },
+  setup: function () {
     let items = ref([]);
 
     // 异步请求，使用onMounted加载，会在组件挂载完成后执行

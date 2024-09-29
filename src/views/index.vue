@@ -1,35 +1,33 @@
-<script>
+<script setup>
 import EssaysList from "@/components/EssaysList.vue";
+import {ref, defineComponent} from 'vue'
 
-export default {
-  name: 'index',
-  components: {EssaysList},
-  setup() {
-    return {
-      title: '随笔',
-      id: "title"
-    }
-  }
+let input = ref('');
+let keyword = '';
+
+
+const handleChange = (value) => {
+  keyword = input.value
 }
-
 
 </script>
 
 <template>
   <div class="title">
     <img alt="" class="logo" src="@/assets/images/essays.jpeg">
-    <span :id>{{ title }}</span>
+    <span>随笔</span>
   </div>
-  <div style="display: flex;height: calc(100% - 106px);">
+  <div class="content">
+
 
     <div class="note-list" style="flex: 1">
-      <EssaysList></EssaysList>
     </div>
     <div class="note-list" style="flex: 1">
-      <EssaysList></EssaysList>
+      <el-input v-model="input" @keydown="handleChange" placeholder="输入API名称"></el-input>
+      <el-input v-model="input" @change="handleChange" placeholder="输入API名称"></el-input>
+      <EssaysList :keyword="keyword"></EssaysList>
     </div>
     <div class="note-list" style="flex: 1">
-      <EssaysList></EssaysList>
     </div>
   </div>
 </template>
@@ -52,6 +50,13 @@ export default {
   }
 }
 
+.content {
+  display: flex;
+  height: calc(100% - 106px);
+  background: url('@/assets/images/bg.png');
+  background-size: cover;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -61,12 +66,6 @@ export default {
 .note-list {
   border-top: 3px solid #a29292;
   height: 100%;
-  border-left: 1px solid gray;
   padding: 0 20px;
-
-  &:last-of-type {
-    border-right: 1px solid gray;
-  }
-
 }
 </style>
