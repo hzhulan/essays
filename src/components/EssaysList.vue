@@ -1,14 +1,10 @@
 <template>
-  <el-table :data="items" style="width: 100%">
-    <el-table-column label="随笔名称" width="200">
-      <template #default="props">
-        <div style="display: flex; align-items: center">
-          <a :href="props.row.url" target="_blank">{{ props.row.name }}</a>
-        </div>
-      </template>
-    </el-table-column>
-    <el-table-column prop="desc" label="简述"/>
-  </el-table>
+  <div class="top-info">API</div>
+  <div v-for="(item,index) in items">
+      <div style="display: flex; align-items: center; margin-top: 10px">
+        {{ index + 1}}. <a :href="item.url" target="_blank">{{ item.name }}</a>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -33,3 +29,12 @@ export default {
   }
 };
 </script>
+
+<style>
+.top-info {
+  text-align: center;
+  font-size: 50px;
+  padding: 20px 0;
+  font-family: 华文楷体,serif;
+}
+</style>

@@ -20,8 +20,17 @@ export default {
     <img alt="" class="logo" src="@/assets/images/essays.jpeg">
     <span :id>{{ title }}</span>
   </div>
-  <div class="note-list">
-    <EssaysList></EssaysList>
+  <div style="display: flex;height: calc(100% - 106px);">
+
+    <div class="note-list" style="flex: 1">
+      <EssaysList></EssaysList>
+    </div>
+    <div class="note-list" style="flex: 1">
+      <EssaysList></EssaysList>
+    </div>
+    <div class="note-list" style="flex: 1">
+      <EssaysList></EssaysList>
+    </div>
   </div>
 </template>
 
@@ -33,7 +42,6 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: inherit;
   width: 100%;
   font-size: 50px;
   color: #a84b4b;
@@ -52,5 +60,13 @@ export default {
 
 .note-list {
   border-top: 3px solid #a29292;
+  height: 100%;
+  border-left: 1px solid gray;
+  padding: 0 20px;
+
+  &:last-of-type {
+    border-right: 1px solid gray;
+  }
+
 }
 </style>
