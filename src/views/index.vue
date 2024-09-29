@@ -43,7 +43,7 @@ const handleChange = (value) => {
   width: 100%;
   font-size: 50px;
   color: #a84b4b;
-  font-family: 华文楷体;
+  font-family: 华文楷体,serif;
 
   span {
     margin-left: 20px;
