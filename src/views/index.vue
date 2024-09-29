@@ -13,25 +13,35 @@ const handleChange = (value) => {
 </script>
 
 <template>
-  <div class="title">
-    <img alt="" class="logo" src="@/assets/images/essays.jpeg">
-    <span>随笔</span>
-  </div>
-  <div class="content">
+  <div class="container">
 
 
-    <div class="note-list" style="flex: 1">
+    <div class="title">
+      <img alt="" class="logo" src="@/assets/images/essays.jpeg">
+      <span>随笔</span>
     </div>
-    <div class="note-list" style="flex: 1">
-      <el-input v-model="input" @keydown="handleChange" placeholder="输入API名称"></el-input>
-      <EssaysList :keyword="keyword"></EssaysList>
-    </div>
-    <div class="note-list" style="flex: 1">
+    <div class="content">
+
+
+      <div class="note-list" style="flex: 1">
+      </div>
+      <div class="note-list" style="flex: 1">
+        <el-input v-model="input" @keydown="handleChange" placeholder="输入API名称"></el-input>
+        <EssaysList :keyword="keyword"></EssaysList>
+      </div>
+      <div class="note-list" style="flex: 1">
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.container {
+  background: url('@/assets/images/bg.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
 .title {
   box-sizing: border-box;
   padding: 20px 20px;
@@ -42,7 +52,7 @@ const handleChange = (value) => {
   width: 100%;
   font-size: 50px;
   color: #a84b4b;
-  font-family: 华文楷体,serif;
+  font-family: 华文楷体, serif;
 
   span {
     margin-left: 20px;
@@ -52,8 +62,6 @@ const handleChange = (value) => {
 .content {
   display: flex;
   height: calc(100% - 106px);
-  background: url('@/assets/images/bg.png');
-  background-size: cover;
 }
 
 .logo {
