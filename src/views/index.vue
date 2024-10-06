@@ -1,13 +1,16 @@
 <script setup>
 import EssaysList from "@/components/EssaysList.vue";
-import {ref, defineComponent} from 'vue'
+import {ref} from 'vue'
 
 let input = ref('');
-let keyword = '';
+let keyword = ref('');
 
 
-const handleChange = (value) => {
-  keyword = input.value
+const handleKeydown = (event) => {
+  setTimeout(() => {
+    keyword.value = event.target.value;
+  }, 0)
+
 }
 
 </script>
@@ -26,8 +29,8 @@ const handleChange = (value) => {
       <div class="note-list" style="flex: 1">
       </div>
       <div class="note-list" style="flex: 1">
-        <el-input v-model="input" @keydown="handleChange" placeholder="输入API名称"></el-input>
-        <EssaysList :keyword="keyword"></EssaysList>
+        <el-input v-model="input" @keydown="handleKeydown" placeholder="输入API名称"></el-input>
+        <EssaysList :keyword="keyword"/>
       </div>
       <div class="note-list" style="flex: 1">
       </div>
