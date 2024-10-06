@@ -28,7 +28,7 @@ export default {
     watch(() => props.keyword, (newValue, oldValue) => {
       throttle.throttle( () => {
         queryList(newValue);
-      }, 1000)
+      }, 500)
     });
 
     const queryList = async (searchWord) => {
