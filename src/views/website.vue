@@ -1,8 +1,18 @@
 <script setup>
-  function switchUrl (e) {
-    const type = e.target.getAttribute('type');
-    window.location.href = `./${type}`
-  }
+import EssaysList from "@/components/EssaysList.vue";
+import {ref} from 'vue'
+
+let input = ref('');
+let keyword = ref('');
+
+
+const handleKeydown = (event) => {
+  setTimeout(() => {
+    keyword.value = event.target.value;
+  }, 0)
+
+}
+
 </script>
 
 <template>
@@ -14,8 +24,17 @@
       <span>随笔</span>
     </div>
     <div class="content">
-      <div @click="switchUrl" class="guard-info" type="website">常用站点</div>
-      <div @click="switchUrl" class="guard-info" type="user">用户</div>
+
+
+      <div class="note-list" style="flex: 1">
+      </div>
+      <div class="note-list" style="flex: 1">
+        <el-input v-model="input" @keydown="handleKeydown" placeholder="输入API名称"></el-input>
+        <EssaysList :keyword="keyword"/>
+      </div>
+      <div class="note-list" style="flex: 1">
+
+      </div>
     </div>
   </div>
 </template>
@@ -47,27 +66,17 @@
 .content {
   display: flex;
   height: calc(100% - 106px);
-  flex-direction: column;
-
-  .guard-info {
-    display: flex;
-    width: 200px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    background-image: repeating-linear-gradient(to bottom, #afb42b, transparent 50px);
-    border-radius: 10px;
-    border: 2px solid #ffffff;
-    margin: 10px 10px 0 10px;
-    cursor: pointer;
-  }
 }
 
 .logo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+.note-list {
+  border-top: 3px solid #a29292;
+  height: 100%;
+  padding: 0 20px;
 }
 </style>

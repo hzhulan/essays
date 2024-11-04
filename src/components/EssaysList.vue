@@ -1,5 +1,5 @@
 <template>
-  <div class="top-info">API</div>
+  <div class="top-info">站点</div>
   <div v-for="(item,index) in items">
     <div style="display: flex; align-items: center; margin-top: 10px">
       {{ index + 1 }}. <a :href="item.url" target="_blank">{{ item.name }}</a>
