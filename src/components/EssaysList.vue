@@ -1,5 +1,5 @@
 <template>
-  <div class="top-info">站点</div>
+  <div class="top-info"></div>
   <div v-for="(item,index) in items">
     <div style="display: flex; align-items: center; margin-top: 10px">
       {{ index + 1 }}. <a :href="item.url" target="_blank">{{ item.name }}</a>
@@ -14,13 +14,14 @@ import {throttle} from '@/assets/js/common.js'
 
 export default {
   name: 'EssaysList',
-  props: {keyword: String},
+  props: {keyword: String, type: Number},
   setup: function (props) {
     let items = ref([]);
-
+    console.log("setup")
+    debugger
     // 异步请求，使用onMounted加载，会在组件挂载完成后执行
     onMounted( async () => {
-        const response = await fetch(`${config.basePath}/essays/essayList`);
+        const response = await fetch(`${config.basePath}/essays/essayList?type=${props.type}`);
         const data = await response.json();
         items.value = data.data;
     });
@@ -32,7 +33,7 @@ export default {
     });
 
     const queryList = async (searchWord) => {
-      const response = await fetch(`${config.basePath}/essays/essayList?keyword=${searchWord}`);
+      const response = await fetch(`${config.basePath}/essays/essayList?keyword=${searchWord}&type=${props.type}`);
       const data = await response.json();
       items.value = data.data;
     }

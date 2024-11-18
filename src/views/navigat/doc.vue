@@ -20,7 +20,7 @@ const handleKeydown = (event) => {
 
 
     <div class="title">
-      <img alt="" class="logo" src="@/assets/images/essays.jpeg">
+      <img alt="" class="logo" src="../../assets/images/essays.jpeg">
       <span>随笔</span>
     </div>
     <div class="content">
@@ -30,7 +30,7 @@ const handleKeydown = (event) => {
       </div>
       <div class="note-list" style="flex: 1">
         <el-input v-model="input" @keydown="handleKeydown" placeholder="输入API名称"></el-input>
-        <EssaysList :keyword="keyword"/>
+        <EssaysList :keyword="keyword" :type="1"/>
       </div>
       <div class="note-list" style="flex: 1">
 
