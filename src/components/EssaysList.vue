@@ -17,8 +17,6 @@ export default {
   props: {keyword: String, type: Number},
   setup: function (props) {
     let items = ref([]);
-    console.log("setup")
-    debugger
     // 异步请求，使用onMounted加载，会在组件挂载完成后执行
     onMounted( async () => {
         const response = await fetch(`${config.basePath}/essays/essayList?type=${props.type}`);
