@@ -7,7 +7,13 @@ const routes = [
     },
     {
         path: "/website",
-        component: () => import("../views/website.vue")
+        component: () => import("../views/navigat/website.vue")
+    },{
+        path: "/doc",
+        component: () => import("../views/navigat/doc.vue")
+    },{
+        path: "/user",
+        component: () => import("../views/navigat/user.vue")
     },
     {
         path: "/content",
