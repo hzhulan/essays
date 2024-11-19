@@ -14,7 +14,8 @@
       <span>随笔</span>
     </div>
     <div class="content">
-      <div @click="switchUrl" class="guard-info" type="website">环境</div>
+      <div @click="switchUrl" class="guard-info" type="job">实战环境</div>
+      <div @click="switchUrl" class="guard-info" type="website">开发环境</div>
       <div @click="switchUrl" class="guard-info" type="doc">文档</div>
       <div @click="switchUrl" class="guard-info" type="user">用户</div>
     </div>

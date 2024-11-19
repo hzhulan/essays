@@ -6,14 +6,17 @@ const routes = [
         component: () => import("../views/index.vue")
     },
     {
+        path: "/job",
+        component: () => import("@/views/navigator/job.vue")
+    },{
         path: "/website",
-        component: () => import("../views/navigat/website.vue")
+        component: () => import("@/views/navigator/website.vue")
     },{
         path: "/doc",
-        component: () => import("../views/navigat/doc.vue")
+        component: () => import("@/views/navigator/doc.vue")
     },{
         path: "/user",
-        component: () => import("../views/navigat/user.vue")
+        component: () => import("@/views/navigator/user.vue")
     },
     {
         path: "/content",
