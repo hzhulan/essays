@@ -1,5 +1,5 @@
 <template>
-  <div class="top-info"><a href="./">返回首页</a></div>
+  <div class="top-info"></div>
   <div v-for="(item,index) in items">
     <div style="display: flex; align-items: center; margin-top: 10px">
 <!--      {{ index + 1 }}. <a :href="item.url" target="_blank">{{ item.name }}</a>-->
@@ -50,8 +50,6 @@ export default {
 .top-info {
   text-align: left;
   font-size: 20px;
-  padding: 20px 0;
   font-family: 华文楷体, serif;
-  //cursor: pointer;
 }
 </style>

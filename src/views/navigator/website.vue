@@ -1,5 +1,6 @@
 <script setup>
 import EssaysList from "@/components/EssaysList.vue";
+import Breadcrumb from "@/components/Breadcrumb.vue";
 import {ref} from 'vue'
 
 let input = ref('');
@@ -18,20 +19,15 @@ const handleKeydown = (event) => {
 <template>
   <div class="container">
 
-
     <div class="title">
       <img alt="" class="logo" src="../../assets/images/essays.jpeg">
       <span>随笔</span>
     </div>
     <div class="content">
       <div class="note-list" style="flex: 1">
-      </div>
-      <div class="note-list" style="flex: 1">
-        <el-input v-model="input" @keydown="handleKeydown" placeholder="输入环境名称"></el-input>
+        <Breadcrumb :data="[{name:'首页', path:'/'}, {name: '开发环境', path:'/website'}]"/>
+        <el-input style="width: 30%;" v-model="input" @keydown="handleKeydown" placeholder="输入环境名称"></el-input>
         <EssaysList :keyword="keyword" :type="2"/>
-      </div>
-      <div class="note-list" style="flex: 1">
-
       </div>
     </div>
   </div>
@@ -76,5 +72,6 @@ const handleKeydown = (event) => {
   border-top: 3px solid #a29292;
   height: 100%;
   padding: 0 20px;
+  margin-left: 50px;
 }
 </style>
