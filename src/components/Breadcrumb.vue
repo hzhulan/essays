@@ -8,7 +8,7 @@ export default {
 
 <template>
   <div class="break-container">
-    <el-breadcrumb separator="/">
+    <el-breadcrumb separator=">">
       <el-breadcrumb-item :to="{ path: data[0].path }">{{data[0].name}}</el-breadcrumb-item>
       <el-breadcrumb-item>{{ data[1].name }}</el-breadcrumb-item>
     </el-breadcrumb>
