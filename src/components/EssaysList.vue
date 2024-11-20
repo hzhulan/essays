@@ -1,8 +1,9 @@
 <template>
-  <div class="top-info"></div>
+  <div class="top-info"><a href="./">返回首页</a></div>
   <div v-for="(item,index) in items">
     <div style="display: flex; align-items: center; margin-top: 10px">
-      {{ index + 1 }}. <a :href="item.url" target="_blank">{{ item.name }}</a>
+<!--      {{ index + 1 }}. <a :href="item.url" target="_blank">{{ item.name }}</a>-->
+      <img src="@/assets/images/icons/book.png" style="height: 30px;" alt=""/><a :href="item.url" target="_blank" style="margin-left: 10px;">{{ item.name }}</a>
     </div>
   </div>
 </template>
@@ -47,8 +48,8 @@ export default {
 
 <style>
 .top-info {
-  text-align: center;
-  font-size: 50px;
+  text-align: left;
+  font-size: 20px;
   padding: 20px 0;
   font-family: 华文楷体, serif;
 }

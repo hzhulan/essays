@@ -24,8 +24,6 @@ const handleKeydown = (event) => {
       <span>随笔</span>
     </div>
     <div class="content">
-
-
       <div class="note-list" style="flex: 1">
       </div>
       <div class="note-list" style="flex: 1">
