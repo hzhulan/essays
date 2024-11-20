@@ -52,5 +52,6 @@ export default {
   font-size: 20px;
   padding: 20px 0;
   font-family: 华文楷体, serif;
+  //cursor: pointer;
 }
 </style>
